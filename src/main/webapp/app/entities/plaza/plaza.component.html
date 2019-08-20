@@ -1,0 +1,106 @@
+<div>
+    <h2 id="page-heading">
+        <span>Plazas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-plaza" [routerLink]="['/plaza/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down" >
+            Create a new Plaza
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Query">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="alert alert-warning" *ngIf="plazas?.length === 0">
+        <span>No plazas found</span>
+    </div>
+    <div class="table-responsive" *ngIf="plazas?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Horas</span></th>
+            <th><span>Fechaini</span></th>
+            <th><span>Fechafin</span></th>
+            <th><span>Categoria</span></th>
+            <th><span>Funcionlaboral</span></th>
+            <th><span>Escuela</span></th>
+            <th><span>Tipomov</span></th>
+            <th><span>Persona</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let plaza of plazas ;trackBy: trackId">
+                <td><a [routerLink]="['/plaza', plaza.id, 'view' ]">{{plaza.id}}</a></td>
+                <td>{{plaza.horas}}</td>
+                <td>{{plaza.fechaini | date:'mediumDate'}}</td>
+                <td>{{plaza.fechafin | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="plaza.categoria">
+                        <a [routerLink]="['/categoria', plaza.categoria?.id, 'view' ]" >{{plaza.categoria?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="plaza.funcionlaboral">
+                        <a [routerLink]="['/funcionlaboral', plaza.funcionlaboral?.id, 'view' ]" >{{plaza.funcionlaboral?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="plaza.escuela">
+                        <a [routerLink]="['/escuela', plaza.escuela?.id, 'view' ]" >{{plaza.escuela?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="plaza.tipomov">
+                        <a [routerLink]="['/tipomov', plaza.tipomov?.id, 'view' ]" >{{plaza.tipomov?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="plaza.persona">
+                        <a [routerLink]="['/persona', plaza.persona?.id, 'view' ]" >{{plaza.persona?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/plaza', plaza.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/plaza', plaza.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/plaza', { outlets: { popup: plaza.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

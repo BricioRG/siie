@@ -1,0 +1,27 @@
+{
+    "name": "Tipomov",
+    "fields": [
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "motivomov",
+            "otherEntityRelationshipName": "tipomov",
+            "relationshipName": "motivomov",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190820190357",
+    "entityTableName": "tipomov",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

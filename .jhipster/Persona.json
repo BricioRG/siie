@@ -1,0 +1,59 @@
+{
+    "name": "Persona",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "primerape",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "segundoape",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fechanac",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "entidadnac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "genero",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rfc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "curp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "edocivil",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "empleado",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "nuempleado",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190820190352",
+    "entityTableName": "persona",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

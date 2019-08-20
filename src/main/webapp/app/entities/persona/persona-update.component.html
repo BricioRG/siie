@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-persona-heading">Create or edit a Persona</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                           formControlName="nombre"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_primerape">Primerape</label>
+                    <input type="text" class="form-control" name="primerape" id="field_primerape"
+                           formControlName="primerape"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_segundoape">Segundoape</label>
+                    <input type="text" class="form-control" name="segundoape" id="field_segundoape"
+                           formControlName="segundoape"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fechanac">Fechanac</label>
+                    <div class="input-group">
+                        <input id="field_fechanac" type="text" class="form-control" name="fechanac" ngbDatepicker  #fechanacDp="ngbDatepicker" formControlName="fechanac"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechanacDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_entidadnac">Entidadnac</label>
+                    <input type="text" class="form-control" name="entidadnac" id="field_entidadnac"
+                           formControlName="entidadnac"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_genero">Genero</label>
+                    <input type="text" class="form-control" name="genero" id="field_genero"
+                           formControlName="genero"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rfc">Rfc</label>
+                    <input type="text" class="form-control" name="rfc" id="field_rfc"
+                           formControlName="rfc"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_curp">Curp</label>
+                    <input type="text" class="form-control" name="curp" id="field_curp"
+                           formControlName="curp"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_edocivil">Edocivil</label>
+                    <input type="text" class="form-control" name="edocivil" id="field_edocivil"
+                           formControlName="edocivil"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_empleado">Empleado</label>
+                    <input type="checkbox" class="form-control" name="empleado" id="field_empleado"
+                           formControlName="empleado"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nuempleado">Nuempleado</label>
+                    <input type="text" class="form-control" name="nuempleado" id="field_nuempleado"
+                           formControlName="nuempleado"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

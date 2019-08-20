@@ -1,0 +1,179 @@
+
+entity Escuela {
+	id Long,
+    cct String,
+    nombre String
+}
+
+entity Ciclo {
+	id Long,
+    clave String,
+    descripcion String,
+    fecini LocalDate,
+    fecfin LocalDate
+}
+
+entity Subciclo{
+	id Long,
+    nombre String,
+    descripcion String,
+    fecini LocalDate,
+    fechafin LocalDate
+}
+
+entity Tipoperiodo {
+	id Long,
+}
+
+entity Escolaridad {
+	id Long,
+    nombre String,
+    descripcion String,
+    periodo String,
+    concluyo Boolean,
+    clavedoc String,
+    documento String
+}
+
+entity Persona {
+	id Long,
+    nombre String,
+    primerape String,
+    segundoape String,
+    fechanac LocalDate,
+    entidadnac String,
+    genero String,
+    rfc String,
+    curp String,
+    edocivil String,
+    empleado Boolean,
+    nuempleado String
+}
+
+entity Jornada {
+	id Long,
+    clave String,
+    descripcion String
+}
+
+entity Financiamiento {
+	id Long,
+    clave String,
+    descripcion String
+}
+
+entity Funcionlaboral {
+	id Long
+    clave String,
+    descripcion String
+}
+
+entity Motivomov {
+	id Long
+    clave String,
+    descripcion String
+}
+
+entity Tipomov {
+	id Long,
+    descripcion String
+}
+
+entity Partida {
+	id Long,
+    clave String,
+    nombre String
+}
+
+entity Categoria {
+	id Long,
+    tipocat String,
+    clave String,
+    descripcion String,
+}
+
+entity Plaza {
+	id Long,
+    horas String,
+    fechaini LocalDate,
+    fechafin LocalDate 
+}
+
+entity Horariolab {
+ id Long,
+ dia String,
+ hinicio String,
+ hfin String
+}
+
+entity Direccion {
+	id Long,
+    calle String,
+    numeroint String,
+    numeroext String,
+    colonia String,
+    ciudad String,
+    municipio String,
+    estado String,
+    referencia String,
+    entrecalle String
+}
+
+entity Usuario {
+	id Long,
+    username String,
+    
+}
+
+entity Rol {
+    id Long,
+    nombre String,
+    descripcion String,
+    activo Boolean
+}
+
+entity Modulo {
+	id Long,
+    nombre String,
+    
+}
+
+entity Permiso {
+ id Long
+}
+
+entity Funcion {
+	id Long,
+    nombre String
+}
+
+relationship ManyToOne {
+	Usuario{rol} to Rol
+    Funcion{modulo} to Modulo
+    Permiso{rol} to Rol
+    Permiso{funcion} to Funcion
+    Modulo{padre} to Modulo
+    Tipomov{motivomov} to Motivomov
+    Partida{financiamiento} to Financiamiento
+    Direccion{persona} to Persona
+    Categoria{jornada} to Jornada
+    Categoria{partida} to Partida
+    Plaza{categoria} to Categoria
+    Plaza{funcionlaboral} to Funcionlaboral
+    Plaza{escuela} to Escuela
+    Plaza{tipomov} to Tipomov
+    Usuario{persona} to Persona
+    Plaza{persona} to Persona
+    Horariolab{plaza} to Plaza
+    Subciclo{ciclo} to Ciclo
+    Subciclo{escuela} to Escuela
+    Escolaridad{persona} to Persona
+    Horariolab{subsiclo} to Subciclo
+    Subciclo{tipoperiodo} to Tipoperiodo
+}
+
+relationship ManyToMany {
+	Rol{funcion(nombre)} to Funcion{rol}
+}
+
+

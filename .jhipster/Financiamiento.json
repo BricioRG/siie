@@ -1,0 +1,23 @@
+{
+    "name": "Financiamiento",
+    "fields": [
+        {
+            "fieldName": "clave",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190820190354",
+    "entityTableName": "financiamiento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

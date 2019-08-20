@@ -1,0 +1,23 @@
+{
+    "name": "Escuela",
+    "fields": [
+        {
+            "fieldName": "cct",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190820190347",
+    "entityTableName": "escuela",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

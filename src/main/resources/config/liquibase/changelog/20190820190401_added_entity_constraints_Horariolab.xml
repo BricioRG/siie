@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Horariolab.
+    -->
+    <changeSet id="20190820190401-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="plaza_id"
+                                 baseTableName="horariolab"
+                                 constraintName="fk_horariolab_plaza_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="plaza"/>
+
+        <addForeignKeyConstraint baseColumnNames="subsiclo_id"
+                                 baseTableName="horariolab"
+                                 constraintName="fk_horariolab_subsiclo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="subciclo"/>
+
+    </changeSet>
+</databaseChangeLog>

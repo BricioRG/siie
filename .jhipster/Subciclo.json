@@ -1,0 +1,53 @@
+{
+    "name": "Subciclo",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fecini",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "fechafin",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "ciclo",
+            "otherEntityRelationshipName": "subciclo",
+            "relationshipName": "ciclo",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "escuela",
+            "otherEntityRelationshipName": "subciclo",
+            "relationshipName": "escuela",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tipoperiodo",
+            "otherEntityRelationshipName": "subciclo",
+            "relationshipName": "tipoperiodo",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190820190349",
+    "entityTableName": "subciclo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

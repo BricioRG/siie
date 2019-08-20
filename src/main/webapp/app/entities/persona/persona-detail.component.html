@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="persona">
+            <h2><span>Persona</span> {{persona.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nombre</span></dt>
+                <dd>
+                    <span>{{persona.nombre}}</span>
+                </dd>
+                <dt><span>Primerape</span></dt>
+                <dd>
+                    <span>{{persona.primerape}}</span>
+                </dd>
+                <dt><span>Segundoape</span></dt>
+                <dd>
+                    <span>{{persona.segundoape}}</span>
+                </dd>
+                <dt><span>Fechanac</span></dt>
+                <dd>
+                    <span>{{persona.fechanac}}</span>
+                </dd>
+                <dt><span>Entidadnac</span></dt>
+                <dd>
+                    <span>{{persona.entidadnac}}</span>
+                </dd>
+                <dt><span>Genero</span></dt>
+                <dd>
+                    <span>{{persona.genero}}</span>
+                </dd>
+                <dt><span>Rfc</span></dt>
+                <dd>
+                    <span>{{persona.rfc}}</span>
+                </dd>
+                <dt><span>Curp</span></dt>
+                <dd>
+                    <span>{{persona.curp}}</span>
+                </dd>
+                <dt><span>Edocivil</span></dt>
+                <dd>
+                    <span>{{persona.edocivil}}</span>
+                </dd>
+                <dt><span>Empleado</span></dt>
+                <dd>
+                    <span>{{persona.empleado}}</span>
+                </dd>
+                <dt><span>Nuempleado</span></dt>
+                <dd>
+                    <span>{{persona.nuempleado}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/persona', persona.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
