@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Plaza.
+    -->
+    <changeSet id="20190820190400-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="categoria_id"
+                                 baseTableName="plaza"
+                                 constraintName="fk_plaza_categoria_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="categoria"/>
+
+        <addForeignKeyConstraint baseColumnNames="funcionlaboral_id"
+                                 baseTableName="plaza"
+                                 constraintName="fk_plaza_funcionlaboral_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="funcionlaboral"/>
+
+        <addForeignKeyConstraint baseColumnNames="escuela_id"
+                                 baseTableName="plaza"
+                                 constraintName="fk_plaza_escuela_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="escuela"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipomov_id"
+                                 baseTableName="plaza"
+                                 constraintName="fk_plaza_tipomov_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipomov"/>
+
+        <addForeignKeyConstraint baseColumnNames="persona_id"
+                                 baseTableName="plaza"
+                                 constraintName="fk_plaza_persona_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="persona"/>
+
+    </changeSet>
+</databaseChangeLog>

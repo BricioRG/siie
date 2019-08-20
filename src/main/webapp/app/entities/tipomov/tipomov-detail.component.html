@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tipomov">
+            <h2><span>Tipomov</span> {{tipomov.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Descripcion</span></dt>
+                <dd>
+                    <span>{{tipomov.descripcion}}</span>
+                </dd>
+                <dt><span>Motivomov</span></dt>
+                <dd>
+                    <div *ngIf="tipomov.motivomov">
+                        <a [routerLink]="['/motivomov', tipomov.motivomov?.id, 'view']">{{tipomov.motivomov?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tipomov', tipomov.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

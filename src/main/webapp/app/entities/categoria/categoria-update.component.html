@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-categoria-heading">Create or edit a Categoria</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tipocat">Tipocat</label>
+                    <input type="text" class="form-control" name="tipocat" id="field_tipocat"
+                           formControlName="tipocat"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_clave">Clave</label>
+                    <input type="text" class="form-control" name="clave" id="field_clave"
+                           formControlName="clave"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                           formControlName="descripcion"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_jornada">Jornada</label>
+                    <select class="form-control" id="field_jornada" name="jornada" formControlName="jornada">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="jornadaOption.id === editForm.get('jornada').value?.id ? editForm.get('jornada').value : jornadaOption" *ngFor="let jornadaOption of jornadas; trackBy: trackJornadaById">{{jornadaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_partida">Partida</label>
+                    <select class="form-control" id="field_partida" name="partida" formControlName="partida">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="partidaOption.id === editForm.get('partida').value?.id ? editForm.get('partida').value : partidaOption" *ngFor="let partidaOption of partidas; trackBy: trackPartidaById">{{partidaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

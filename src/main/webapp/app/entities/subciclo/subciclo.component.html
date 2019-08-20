@@ -1,0 +1,96 @@
+<div>
+    <h2 id="page-heading">
+        <span>Subciclos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-subciclo" [routerLink]="['/subciclo/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down" >
+            Create a new Subciclo
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Query">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="alert alert-warning" *ngIf="subciclos?.length === 0">
+        <span>No subciclos found</span>
+    </div>
+    <div class="table-responsive" *ngIf="subciclos?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Nombre</span></th>
+            <th><span>Descripcion</span></th>
+            <th><span>Fecini</span></th>
+            <th><span>Fechafin</span></th>
+            <th><span>Ciclo</span></th>
+            <th><span>Escuela</span></th>
+            <th><span>Tipoperiodo</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let subciclo of subciclos ;trackBy: trackId">
+                <td><a [routerLink]="['/subciclo', subciclo.id, 'view' ]">{{subciclo.id}}</a></td>
+                <td>{{subciclo.nombre}}</td>
+                <td>{{subciclo.descripcion}}</td>
+                <td>{{subciclo.fecini | date:'mediumDate'}}</td>
+                <td>{{subciclo.fechafin | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="subciclo.ciclo">
+                        <a [routerLink]="['/ciclo', subciclo.ciclo?.id, 'view' ]" >{{subciclo.ciclo?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="subciclo.escuela">
+                        <a [routerLink]="['/escuela', subciclo.escuela?.id, 'view' ]" >{{subciclo.escuela?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="subciclo.tipoperiodo">
+                        <a [routerLink]="['/tipoperiodo', subciclo.tipoperiodo?.id, 'view' ]" >{{subciclo.tipoperiodo?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/subciclo', subciclo.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/subciclo', subciclo.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/subciclo', { outlets: { popup: subciclo.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

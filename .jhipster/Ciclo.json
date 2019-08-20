@@ -1,0 +1,31 @@
+{
+    "name": "Ciclo",
+    "fields": [
+        {
+            "fieldName": "clave",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fecini",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "fecfin",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190820190348",
+    "entityTableName": "ciclo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

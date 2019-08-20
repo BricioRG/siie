@@ -46,6 +46,29 @@ public class CacheConfiguration {
             createCache(cm, io.github.jhipster.application.domain.User.class.getName());
             createCache(cm, io.github.jhipster.application.domain.Authority.class.getName());
             createCache(cm, io.github.jhipster.application.domain.User.class.getName() + ".authorities");
+            createCache(cm, io.github.jhipster.application.domain.Escuela.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Ciclo.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Subciclo.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Tipoperiodo.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Escolaridad.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Persona.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Jornada.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Financiamiento.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Funcionlaboral.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Motivomov.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Tipomov.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Partida.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Categoria.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Plaza.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Horariolab.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Direccion.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Usuario.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Rol.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Rol.class.getName() + ".funcions");
+            createCache(cm, io.github.jhipster.application.domain.Modulo.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Permiso.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Funcion.class.getName());
+            createCache(cm, io.github.jhipster.application.domain.Funcion.class.getName() + ".rols");
             // jhipster-needle-ehcache-add-entry
         };
     }
