@@ -1,0 +1,23 @@
+{
+    "name": "Motivomov",
+    "fields": [
+        {
+            "fieldName": "clave",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190829184034",
+    "entityTableName": "motivomov",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

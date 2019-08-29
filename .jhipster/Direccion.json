@@ -1,0 +1,59 @@
+{
+    "name": "Direccion",
+    "fields": [
+        {
+            "fieldName": "calle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroint",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroext",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "colonia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ciudad",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "municipio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "referencia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "entrecalle",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "persona",
+            "otherEntityRelationshipName": "direccion",
+            "relationshipName": "persona",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829184040",
+    "entityTableName": "direccion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

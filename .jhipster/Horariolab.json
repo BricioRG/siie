@@ -1,0 +1,42 @@
+{
+    "name": "Horariolab",
+    "fields": [
+        {
+            "fieldName": "dia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hinicio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hfin",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "plaza",
+            "otherEntityRelationshipName": "horariolab",
+            "relationshipName": "plaza",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "subciclo",
+            "otherEntityRelationshipName": "horariolab",
+            "relationshipName": "subsiclo",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829184039",
+    "entityTableName": "horariolab",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

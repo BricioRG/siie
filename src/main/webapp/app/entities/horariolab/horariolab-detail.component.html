@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="horariolab">
+            <h2><span>Horariolab</span> {{horariolab.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Dia</span></dt>
+                <dd>
+                    <span>{{horariolab.dia}}</span>
+                </dd>
+                <dt><span>Hinicio</span></dt>
+                <dd>
+                    <span>{{horariolab.hinicio}}</span>
+                </dd>
+                <dt><span>Hfin</span></dt>
+                <dd>
+                    <span>{{horariolab.hfin}}</span>
+                </dd>
+                <dt><span>Plaza</span></dt>
+                <dd>
+                    <div *ngIf="horariolab.plaza">
+                        <a [routerLink]="['/plaza', horariolab.plaza?.id, 'view']">{{horariolab.plaza?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Subsiclo</span></dt>
+                <dd>
+                    <div *ngIf="horariolab.subsiclo">
+                        <a [routerLink]="['/subciclo', horariolab.subsiclo?.id, 'view']">{{horariolab.subsiclo?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/horariolab', horariolab.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+{
+    "name": "Escolaridad",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "periodo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "concluyo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "clavedoc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "documento",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "persona",
+            "otherEntityRelationshipName": "escolaridad",
+            "relationshipName": "persona",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829184029",
+    "entityTableName": "escolaridad",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Rol",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activo",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "funcion",
+            "otherEntityRelationshipName": "rol",
+            "relationshipName": "funcion",
+            "otherEntityField": "nombre",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190829184042",
+    "entityTableName": "rol",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
