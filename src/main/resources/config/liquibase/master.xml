@@ -14,6 +14,40 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184025_added_entity_Escuela.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184026_added_entity_Ciclo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184027_added_entity_Subciclo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184028_added_entity_Tipoperiodo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184029_added_entity_Escolaridad.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184030_added_entity_Persona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184031_added_entity_Jornada.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184032_added_entity_Financiamiento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184033_added_entity_Funcionlaboral.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184034_added_entity_Motivomov.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184035_added_entity_Tipomov.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184036_added_entity_Partida.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184037_added_entity_Categoria.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184038_added_entity_Plaza.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184039_added_entity_Horariolab.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184040_added_entity_Direccion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184041_added_entity_Usuario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184042_added_entity_Rol.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184043_added_entity_Modulo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184044_added_entity_Permiso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184045_added_entity_Funcion.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190829184027_added_entity_constraints_Subciclo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184029_added_entity_constraints_Escolaridad.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184035_added_entity_constraints_Tipomov.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184036_added_entity_constraints_Partida.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184037_added_entity_constraints_Categoria.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184038_added_entity_constraints_Plaza.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184039_added_entity_constraints_Horariolab.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184040_added_entity_constraints_Direccion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184041_added_entity_constraints_Usuario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184042_added_entity_constraints_Rol.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184043_added_entity_constraints_Modulo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184044_added_entity_constraints_Permiso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190829184045_added_entity_constraints_Funcion.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

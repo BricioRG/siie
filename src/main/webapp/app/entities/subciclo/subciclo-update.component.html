@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-subciclo-heading">Create or edit a Subciclo</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="field_nombre"
+                           formControlName="nombre"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                           formControlName="descripcion"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fecini">Fecini</label>
+                    <div class="input-group">
+                        <input id="field_fecini" type="text" class="form-control" name="fecini" ngbDatepicker  #feciniDp="ngbDatepicker" formControlName="fecini"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="feciniDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fechafin">Fechafin</label>
+                    <div class="input-group">
+                        <input id="field_fechafin" type="text" class="form-control" name="fechafin" ngbDatepicker  #fechafinDp="ngbDatepicker" formControlName="fechafin"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechafinDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ciclo">Ciclo</label>
+                    <select class="form-control" id="field_ciclo" name="ciclo" formControlName="ciclo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="cicloOption.id === editForm.get('ciclo').value?.id ? editForm.get('ciclo').value : cicloOption" *ngFor="let cicloOption of ciclos; trackBy: trackCicloById">{{cicloOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_escuela">Escuela</label>
+                    <select class="form-control" id="field_escuela" name="escuela" formControlName="escuela">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="escuelaOption.id === editForm.get('escuela').value?.id ? editForm.get('escuela').value : escuelaOption" *ngFor="let escuelaOption of escuelas; trackBy: trackEscuelaById">{{escuelaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tipoperiodo">Tipoperiodo</label>
+                    <select class="form-control" id="field_tipoperiodo" name="tipoperiodo" formControlName="tipoperiodo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tipoperiodoOption.id === editForm.get('tipoperiodo').value?.id ? editForm.get('tipoperiodo').value : tipoperiodoOption" *ngFor="let tipoperiodoOption of tipoperiodos; trackBy: trackTipoperiodoById">{{tipoperiodoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

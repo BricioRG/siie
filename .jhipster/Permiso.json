@@ -1,0 +1,29 @@
+{
+    "name": "Permiso",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "rol",
+            "otherEntityRelationshipName": "permiso",
+            "relationshipName": "rol",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "funcion",
+            "otherEntityRelationshipName": "permiso",
+            "relationshipName": "funcion",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829184044",
+    "entityTableName": "permiso",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Tipoperiodo",
+    "fields": [],
+    "relationships": [],
+    "changelogDate": "20190829184028",
+    "entityTableName": "tipoperiodo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

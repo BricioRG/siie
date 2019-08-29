@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="categoria">
+            <h2><span>Categoria</span> {{categoria.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Tipocat</span></dt>
+                <dd>
+                    <span>{{categoria.tipocat}}</span>
+                </dd>
+                <dt><span>Clave</span></dt>
+                <dd>
+                    <span>{{categoria.clave}}</span>
+                </dd>
+                <dt><span>Descripcion</span></dt>
+                <dd>
+                    <span>{{categoria.descripcion}}</span>
+                </dd>
+                <dt><span>Jornada</span></dt>
+                <dd>
+                    <div *ngIf="categoria.jornada">
+                        <a [routerLink]="['/jornada', categoria.jornada?.id, 'view']">{{categoria.jornada?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Partida</span></dt>
+                <dd>
+                    <div *ngIf="categoria.partida">
+                        <a [routerLink]="['/partida', categoria.partida?.id, 'view']">{{categoria.partida?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/categoria', categoria.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

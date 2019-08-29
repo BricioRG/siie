@@ -1,0 +1,42 @@
+{
+    "name": "Categoria",
+    "fields": [
+        {
+            "fieldName": "tipocat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "clave",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "jornada",
+            "otherEntityRelationshipName": "categoria",
+            "relationshipName": "jornada",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "partida",
+            "otherEntityRelationshipName": "categoria",
+            "relationshipName": "partida",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829184037",
+    "entityTableName": "categoria",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

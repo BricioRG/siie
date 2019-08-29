@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Categoria.
+    -->
+    <changeSet id="20190829184037-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="jornada_id"
+                                 baseTableName="categoria"
+                                 constraintName="fk_categoria_jornada_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jornada"/>
+
+        <addForeignKeyConstraint baseColumnNames="partida_id"
+                                 baseTableName="categoria"
+                                 constraintName="fk_categoria_partida_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="partida"/>
+
+    </changeSet>
+</databaseChangeLog>

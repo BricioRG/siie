@@ -1,0 +1,63 @@
+{
+    "name": "Plaza",
+    "fields": [
+        {
+            "fieldName": "horas",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fechaini",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "fechafin",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "categoria",
+            "otherEntityRelationshipName": "plaza",
+            "relationshipName": "categoria",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "funcionlaboral",
+            "otherEntityRelationshipName": "plaza",
+            "relationshipName": "funcionlaboral",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "escuela",
+            "otherEntityRelationshipName": "plaza",
+            "relationshipName": "escuela",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tipomov",
+            "otherEntityRelationshipName": "plaza",
+            "relationshipName": "tipomov",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "persona",
+            "otherEntityRelationshipName": "plaza",
+            "relationshipName": "persona",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190829184038",
+    "entityTableName": "plaza",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

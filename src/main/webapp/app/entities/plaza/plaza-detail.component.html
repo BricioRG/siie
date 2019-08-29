@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="plaza">
+            <h2><span>Plaza</span> {{plaza.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Horas</span></dt>
+                <dd>
+                    <span>{{plaza.horas}}</span>
+                </dd>
+                <dt><span>Fechaini</span></dt>
+                <dd>
+                    <span>{{plaza.fechaini}}</span>
+                </dd>
+                <dt><span>Fechafin</span></dt>
+                <dd>
+                    <span>{{plaza.fechafin}}</span>
+                </dd>
+                <dt><span>Categoria</span></dt>
+                <dd>
+                    <div *ngIf="plaza.categoria">
+                        <a [routerLink]="['/categoria', plaza.categoria?.id, 'view']">{{plaza.categoria?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Funcionlaboral</span></dt>
+                <dd>
+                    <div *ngIf="plaza.funcionlaboral">
+                        <a [routerLink]="['/funcionlaboral', plaza.funcionlaboral?.id, 'view']">{{plaza.funcionlaboral?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Escuela</span></dt>
+                <dd>
+                    <div *ngIf="plaza.escuela">
+                        <a [routerLink]="['/escuela', plaza.escuela?.id, 'view']">{{plaza.escuela?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Tipomov</span></dt>
+                <dd>
+                    <div *ngIf="plaza.tipomov">
+                        <a [routerLink]="['/tipomov', plaza.tipomov?.id, 'view']">{{plaza.tipomov?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Persona</span></dt>
+                <dd>
+                    <div *ngIf="plaza.persona">
+                        <a [routerLink]="['/persona', plaza.persona?.id, 'view']">{{plaza.persona?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/plaza', plaza.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-direccion-heading">Create or edit a Direccion</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_calle">Calle</label>
+                    <input type="text" class="form-control" name="calle" id="field_calle"
+                           formControlName="calle"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numeroint">Numeroint</label>
+                    <input type="text" class="form-control" name="numeroint" id="field_numeroint"
+                           formControlName="numeroint"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numeroext">Numeroext</label>
+                    <input type="text" class="form-control" name="numeroext" id="field_numeroext"
+                           formControlName="numeroext"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_colonia">Colonia</label>
+                    <input type="text" class="form-control" name="colonia" id="field_colonia"
+                           formControlName="colonia"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ciudad">Ciudad</label>
+                    <input type="text" class="form-control" name="ciudad" id="field_ciudad"
+                           formControlName="ciudad"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_municipio">Municipio</label>
+                    <input type="text" class="form-control" name="municipio" id="field_municipio"
+                           formControlName="municipio"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_estado">Estado</label>
+                    <input type="text" class="form-control" name="estado" id="field_estado"
+                           formControlName="estado"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_referencia">Referencia</label>
+                    <input type="text" class="form-control" name="referencia" id="field_referencia"
+                           formControlName="referencia"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_entrecalle">Entrecalle</label>
+                    <input type="text" class="form-control" name="entrecalle" id="field_entrecalle"
+                           formControlName="entrecalle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_persona">Persona</label>
+                    <select class="form-control" id="field_persona" name="persona" formControlName="persona">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="personaOption.id === editForm.get('persona').value?.id ? editForm.get('persona').value : personaOption" *ngFor="let personaOption of personas; trackBy: trackPersonaById">{{personaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

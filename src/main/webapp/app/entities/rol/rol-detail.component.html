@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rol">
+            <h2><span>Rol</span> {{rol.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nombre</span></dt>
+                <dd>
+                    <span>{{rol.nombre}}</span>
+                </dd>
+                <dt><span>Descripcion</span></dt>
+                <dd>
+                    <span>{{rol.descripcion}}</span>
+                </dd>
+                <dt><span>Activo</span></dt>
+                <dd>
+                    <span>{{rol.activo}}</span>
+                </dd>
+                <dt><span>Funcion</span></dt>
+                <dd>
+                    <span *ngFor="let funcion of rol.funcions; let last = last">
+                        <a [routerLink]="['/funcion', funcion?.id, 'view' ]">{{funcion.nombre}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rol', rol.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
